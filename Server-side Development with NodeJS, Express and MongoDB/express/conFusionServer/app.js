@@ -15,7 +15,7 @@ const mongoose = require('mongoose');
 
 
 
-const uri = "mongodb+srv://vishnu:1qwerty@cluster0.d5mwy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "database=env";
 // const client = mongoose(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connect(uri,{autoIndex: false}, () => {
   console.log('connected to database..');
