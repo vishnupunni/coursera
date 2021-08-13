@@ -12,22 +12,22 @@ leaderRouter.use(bodyParser.json());
 leaderRouter.route('/')
     .get((req, res, next) => {
         Leaders.find({})
-        .then((Leaders) => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'application/json');
-            res.json(Leaders);
-        }, (err) => next(err))
-        .catch((err) => next(err));
+            .then((Leaders) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.json(Leaders);
+            }, (err) => next(err))
+            .catch((err) => next(err));
     })
     .post((req, res, next) => {
         Leaders.create(req.body)
-        .then((leader) => {
-            console.log('Leaders Created ', leader);
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'application/json');
-            res.json(leader);
-        }, (err) => next(err))
-        .catch((err) => next(err));
+            .then((leader) => {
+                console.log('Leaders Created ', leader);
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.json(leader);
+            }, (err) => next(err))
+            .catch((err) => next(err));
     })
     .put((req, res, next) => {
         res.statusCode = 403;
@@ -35,12 +35,12 @@ leaderRouter.route('/')
     })
     .delete((req, res, next) => {
         Leaders.remove({})
-        .then((resp) => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'application/json');
-            res.json(resp);
-        }, (err) => next(err))
-        .catch((err) => next(err));
+            .then((resp) => {
+                res.statusCode = 200;
+                res.setHeader('Content-Type', 'application/json');
+                res.json(resp);
+            }, (err) => next(err))
+            .catch((err) => next(err));
     });
 
 leaderRouter.route('/:leaderId')
